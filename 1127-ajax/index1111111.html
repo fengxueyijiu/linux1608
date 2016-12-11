@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>ajax demo</h1>
+  <button>获取我的github信息</button>
+  <p id='info'></p>
+  <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+  <script>
+    // var xmlhttp=new XMLHttpRequest();
+    // xmlhttp.onreadystatechange=function(){
+    // if (xmlhttp.readyState==4 && xmlhttp.status==200){
+    //   var resObj=JSON.parse(xmlhttp.responseText).posts
+    //   for(var i=0;i<resObj.length;i++){
+    //     console.log(resObj[i].content)
+    //   }
+    //   }
+    // }
+    // xmlhttp.open("GET","http://api.duopingshidai.com/api/posts",true);//地址异步
+    // xmlhttp.send();
+
+
+    var xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function(){
+    if (xmlhttp.readyState==4 && xmlhttp.status==200){
+      console.log(xmlhttp.responseText);
+      }
+    }
+    xmlhttp.open("POST","http://digitalcity.duopingshidai.com/",true);//地址异步
+    xmlhttp.setRequestHeader("Content-type","application/json");
+    var obj={phoneNumber:"13933968168"};
+    var jsonObj=JSON.stringify(obj);
+    xmlhttp.send(jsonObj);
+
+    // $(document).ready(
+    //   function(){
+    //     alert('newming')
+    //   }
+    // )
+
+    var obj={phoneNumber:"13933968168"};
+    var jsonObj=JSON.stringify(obj);
+
+    jQuery.ajax({
+      type:'POST',
+      data:jsonObj,
+      contentType:'application/json',
+      url:"http://digitalcity.duopingshidai.com/",
+      success:function(res,status){
+        console.log(res,status);
+      },
+      error:function (xml,msg){
+        console.log(xml,msg)
+      }
+    })  //jQuery用法 发送请求
+  </script>
+</body>
+</html>

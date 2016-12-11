@@ -1,0 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.click{
+  position: absolute;
+  z-index: 10;
+}
+.cover{
+  position: absolute;
+  top:0;
+  left:0;
+  bottom: 0;
+  right:0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.menu{
+  position: absolute;
+  top:0;
+  left:0;
+  bottom: 0;
+  width: 200px;
+  background-color: #fff;
+  transition: all 1.7s ease-out;
+}
+.menu h3{
+  text-align: center;
+  background-color: #00bcd4;
+  padding: 20px;
+
+}

@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1{
+  font-size: 48px;
+  text-align: center;
+}
+.menu{
+  background-image: url('./images/1.png');
+}
+.menu li{
+  cursor: pointer;
+}
